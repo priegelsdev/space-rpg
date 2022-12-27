@@ -1,4 +1,72 @@
 * {
   font-family: 'Orbitron', sans-serif;
+  box-sizing: border-box;
 }
+
+/*** TYPOGRAPHY ***/
+
+/*** BODY & MAIN ***/
+
+body {
+  margin-top: 1.5em;
+  background-color: #020016;
+  /* TO DO: add stars to bg, mb animated to sparkle */ 
+  color: whitesmoke;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 600px) {
+
+  main {
+    flex-direction: row;
+  }
+
+}
+
+.character-card {
+  background-color: black;
+  width: 90vw;
+  max-width: 230px;
+  border: 1px solid #db80ff;
+  border-radius: 3px;
+  padding: 1em;
+  margin-bottom: 0.75em;
+}
+
+.name {
+  text-align: center;
+}
+
+.avatar {
+  width: 15vh;
+  margin: 0 auto;
+  display: block;
+}
+
+.dice-container {
+  display: flex;
+  justify-content: center;
+}
+
+/*** ACTIONS ***/
+
+.actions {
+  text-align: center;
+}
+
+.attack-btn {
+  background-color: #29ebff;
+  color: black;
+  padding: 0.75em 1.5em;
+  border: black 1px solid;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
 
