@@ -1,17 +1,30 @@
-document.querySelector('.hero').innerHTML = `
-  <div class="character-card">
-    <h4 class="name"> Marine <h4>
-    <img class="avatar" src="img/marine.jpg">
-    <p class="health">health: <b> 60 </b></p>
-    <div class="dice-container"><div class="dice"> 6 </div></div>
-  </div>
-`
+const hero = {
+    elementId: "hero",
+    name: "Marine",
+    avatar: "img/marine.jpg",
+    health: 60,
+    diceScore: 6
+}
 
-document.querySelector('.monster').innerHTML = `
-  <div class="character-card">
-    <h4 class="name"> Space Worm <h4>
-    <img class="avatar" src="img/worm.jpg">
-    <p class="health">health: <b> 10 </b></p>
-    <div class="dice-container"><div class="dice"> 4 </div></div>
-  </div>
-`
+const monster = {
+    elementId: "monster",
+    name: "Space Worm",
+    avatar: "img/worm.jpg",
+    health: 10,
+    diceScore: 4
+}
+
+function renderCharacter(char) {
+    document.getElementById(char.elementId).innerHTML =
+    `<div class="character-card">
+        <h4 class="name"> ${char.name} </h4>
+        <img class="avatar" src="${char.avatar}" />
+        <div class="health">health: <b> ${char.health} </b></div>
+        <div class="dice-container">
+            <div class="dice"> ${char.diceScore} </div>
+        </div>
+    </div>`
+}
+
+renderCharacter(hero);
+renderCharacter(monster);
