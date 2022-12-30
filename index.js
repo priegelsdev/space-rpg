@@ -14,14 +14,13 @@ const monster = {
     diceCount: 1
 }
 
+// function to get random dice results
+
 function getDiceRollArray(diceCount) {
-    let diceRollArray = [];
-    for (let i = 0; i < diceCount; i++) {
-        let randomNum = Math.floor(Math.random() * 6) + 1;
-        diceRollArray.push(randomNum);
-    }
-    return diceRollArray;
+    return new Array(diceCount).fill(0).map(() => Math.floor(Math.random() * 6 + 1)) 
 }
+
+// function to display dice results
 
 function getDiceHtml(diceCount) {
     return getDiceRollArray(diceCount).map(
