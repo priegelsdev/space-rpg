@@ -94,6 +94,7 @@ main {
   border-radius: 3px;
   font-weight: bold;
   cursor: pointer;
+  position: relative;
 }
 
 .attack-btn:active {
