@@ -7,18 +7,18 @@ const spaceWorm = new Character(charData[1]);
 // event listener
 document.querySelector('.attack-btn').addEventListener('click', handleAttack);
 
-// placeholder
+// function to display placeholder dice on initial page load
 
 function getPlaceholderHtml() {
     const diceArr = document.querySelectorAll('.dice')
     diceArr.forEach(dice => clear(dice)
         )
 
-    function clear(dice) {
-        dice.innerHTML = '';
-        dice.classList.add('placeholder-dice')
-    }
-
+    // function to clear dice scores and make background transparent
+        function clear(dice) {
+            dice.innerHTML = '';
+            dice.classList.add('placeholder-dice')
+        }
 }
 
 // function to  handle attack
@@ -35,4 +35,3 @@ function render() {
 
 render();
 getPlaceholderHtml();
-console.log(document.querySelector('.dice'))
