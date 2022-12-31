@@ -1,18 +1,4 @@
-const hero = {
-    elementId: "hero",
-    name: "Marine",
-    avatar: "img/marine.jpg",
-    health: 60,
-    diceCount: 3
-}
-
-const monster = {
-    elementId: "monster",
-    name: "Space Worm",
-    avatar: "img/worm.jpg",
-    health: 10,
-    diceCount: 1
-}
+import {charData} from './data.js'
 
 // function to get random dice results
 
@@ -41,7 +27,7 @@ function Character(data) {
 
         const diceHtml = this.getDiceHtml(diceCount);
 
-        document.getElementById(elementId).innerHTML = `
+        return `
             <div class="character-card">
                 <h4 class="name"> ${name} </h4>
                 <img class="avatar" src="${avatar}" />
@@ -54,11 +40,14 @@ function Character(data) {
     }
 }
 
-const marine = new Character(hero);
-const spaceWorm = new Character(monster);
+const marine = new Character(charData[0]);
+const spaceWorm = new Character(charData[1]);
 
-//invoke html method on constructor function to render out characters
+//function to render out characters with constructor fn method
 
-marine.getCharacterHtml();
-spaceWorm.getCharacterHtml();
+function render() {
+    document.getElementById(marine.elementId).innerHTML = marine.getCharacterHtml();
+    document.getElementById(spaceWorm.elementId).innerHTML = spaceWorm.getCharacterHtml();
+}
 
+render();
