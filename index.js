@@ -20,24 +20,26 @@ function getDiceRollArray(diceCount) {
     return new Array(diceCount).fill(0).map(() => Math.floor(Math.random() * 6 + 1)) 
 }
 
-// function to display dice results
-
-function getDiceHtml(diceCount) {
-    return getDiceRollArray(diceCount).map(
-        num => `<div class="dice">${num}</div>`
-    ).join('');
-}
-
 // constructor function as template to create multiple characters from
 
 function Character(data) {
     Object.assign(this, data);
 
+    // method to render dice 
+
+    this.getDiceHtml = function(diceCount) {
+        return getDiceRollArray(diceCount).map(num => `
+            <div class="dice">${num}</div>
+        `).join('');
+    }
+
+    // method to render character
+
     this.getCharacterHtml = function() {
         //object destructuring
         const {elementId, name, avatar, health, diceCount} = this;
 
-        const diceHtml = getDiceHtml(diceCount);
+        const diceHtml = this.getDiceHtml(diceCount);
 
         document.getElementById(elementId).innerHTML = `
             <div class="character-card">
