@@ -28,25 +28,38 @@ function getDiceHtml(diceCount) {
     ).join('');
 }
 
-// function to render out character data
-function renderCharacter(char) {
+// constructor function as template to create multiple characters from
 
-    // object destructuring
-    const {elementId, name, avatar, health, diceCount} = char;
+function Character(data) {
+    this.elementId = data.elementId;
+    this.name = data.name;
+    this.avatar = data.avatar;
+    this.health = data.health;
+    this.diceCount = data.diceCount;
 
-    // mapping over dice array instead of looping
-    const diceHtml = getDiceHtml(diceCount);
+    this.getCharacterHtml = function() {
+        const {elementId, name, avatar, health, diceCount} = this;
 
-    document.getElementById(elementId).innerHTML =
-    `<div class="character-card">
-        <h4 class="name"> ${name} </h4>
-        <img class="avatar" src="${avatar}" />
-        <div class="health">health: <b> ${health} </b></div>
-        <div class="dice-container">
-            ${diceHtml}
-        </div>
-    </div>`
+        const diceHtml = getDiceHtml(diceCount);
+
+        document.getElementById(elementId).innerHTML = `
+            <div class="character-card">
+                <h4 class="name"> ${name} </h4>
+                <img class="avatar" src="${avatar}" />
+                <div class="health">health: <b> ${health} </b></div>
+                <div class="dice-container">
+                    ${diceHtml}
+                </div>
+            </div>
+        `
+    }
 }
 
-renderCharacter(hero);
-renderCharacter(monster);
+const marine = new Character(hero);
+const spaceWorm = new Character(monster);
+
+//invoke html method on constructor function to render out characters
+
+marine.getCharacterHtml();
+spaceWorm.getCharacterHtml();
+
