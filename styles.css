@@ -80,6 +80,10 @@ main {
   margin-right: 0.3em;
 }
 
+.placeholder-dice {
+  background-color: transparent;
+}
+
 /*** ACTIONS ***/
 
 .actions {
