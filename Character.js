@@ -13,10 +13,15 @@ function Character(data) {
 
     this.getDiceHtml = function() {
         this.currentDiceScore = getDiceRollArray(this.diceCount);
-        console.log(this.currentDiceScore)
         this.diceArray = this.currentDiceScore.map(num => `<div class="dice">${num}</div>`).join('');
     }
     
+    // method when character takes damage
+
+    this.takeDamage = function(attackScoreArray) {
+        console.log(`${this.name} loses ${attackScoreArray} health`)
+    }
+
     // method to render character
 
     this.getCharacterHtml = function() {

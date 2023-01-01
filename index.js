@@ -12,6 +12,8 @@ function handleAttack() {
 
     marine.getDiceHtml();
     spaceWorm.getDiceHtml();
+    marine.takeDamage(spaceWorm.currentDiceScore);    
+    spaceWorm.takeDamage(marine.currentDiceScore);
     render();
 }
 
