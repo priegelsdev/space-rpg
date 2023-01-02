@@ -19,7 +19,8 @@ function Character(data) {
     // method when character takes damage
 
     this.takeDamage = function(attackScoreArray) {
-        console.log(`${this.name} loses ${attackScoreArray} health`)
+        const attackScore = attackScoreArray.reduce((a, b) => a + b); 
+        this.health -= attackScore;
     }
 
     // method to render character
