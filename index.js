@@ -15,6 +15,25 @@ function handleAttack() {
     marine.takeDamage(spaceWorm.currentDiceScore);    
     spaceWorm.takeDamage(marine.currentDiceScore);
     render();
+
+    if (!marine.isAlive || !spaceWorm.isAlive) {
+        console.log('test')
+        endGame();
+    }
+}
+
+// function to end game 
+
+function endGame() {
+
+    // first use of ternary operator
+
+    const message = !marine.isAlive && !spaceWorm.isAlive ? 'You are dead. Game over!'
+        : !marine.isAlive ? 'You died.'
+        : 'You win.'
+
+    console.log(message)
+
 }
 
 //function to render out characters with constructor fn method

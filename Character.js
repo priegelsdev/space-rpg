@@ -22,8 +22,9 @@ function Character(data) {
         const attackScore = attackScoreArray.reduce((a, b) => a + b); 
         this.health -= attackScore;
 
-        if (this.health < 0) {
+        if (this.health <= 0) {
             this.health = 0;
+            this.isAlive = false;
         }
     }
 

@@ -4,7 +4,8 @@ const charData = [{
     avatar: "img/marine.jpg",
     health: 60,
     diceCount: 3,
-    currentDiceScore: [0]
+    currentDiceScore: [0],
+    isAlive: true
 },
 {
     elementId: "monster",
@@ -12,7 +13,8 @@ const charData = [{
     avatar: "img/worm.jpg",
     health: 10,
     diceCount: 1,
-    currentDiceScore: [0]
+    currentDiceScore: [0],
+    isAlive: true
 }]
 
 export {charData}
