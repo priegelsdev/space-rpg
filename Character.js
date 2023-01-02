@@ -21,6 +21,10 @@ function Character(data) {
     this.takeDamage = function(attackScoreArray) {
         const attackScore = attackScoreArray.reduce((a, b) => a + b); 
         this.health -= attackScore;
+
+        if (this.health < 0) {
+            this.health = 0;
+        }
     }
 
     // method to render character
