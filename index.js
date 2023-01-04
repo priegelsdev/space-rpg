@@ -8,7 +8,11 @@ let monster = getNewMonster();
 const spaceWorm = new Character(charData.spaceworm);
 
 // event listener
-document.querySelector('.attack-btn').addEventListener('click', handleAttack);
+document.querySelector('.attack-btn').addEventListener('click', function() {
+  if (monster.health != 0 && marine.health != 0) {
+    handleAttack()
+  } 
+});
 
 // function to get a new monster from array to fight against
 
@@ -29,13 +33,15 @@ function handleAttack() {
     render();
 
     if (!marine.isAlive) {
-        endGame();
+        setTimeout(() => endGame(), 2000);
     } else if (!monster.isAlive) {
         if (monsterArray.length > 0) {
-          monster = getNewMonster();
-          render();
+          setTimeout(() => {
+            monster = getNewMonster();
+            render();
+          }, 1000)
         } else {
-          endGame();
+          setTimeout(() => endGame(), 2000);
       }
     } 
 }
