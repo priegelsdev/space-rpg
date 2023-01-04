@@ -26,8 +26,8 @@ function getNewMonster() {
 
 function handleAttack() {
 
-    marine.getDiceHtml();
-    monster.getDiceHtml();
+    marine.setDiceHtml();
+    monster.setDiceHtml();
     marine.takeDamage(monster.currentDiceScore);    
     monster.takeDamage(marine.currentDiceScore);
     render();

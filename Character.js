@@ -15,14 +15,14 @@ function Character(data) {
 
     // set up health bar
 
-    this.getHealthBarHtml = function() {
+    this.getHealthBar = function() {
       return getPercentage(this.health, this.maxHealth)
     }
 
     this.getHealthBarCss = function() {
       let bgColor = 'green';
 
-      if (this.getHealthBarHtml() < 26) {
+      if (this.getHealthBar() < 26) {
         bgColor = 'red'
       }
 
@@ -31,7 +31,7 @@ function Character(data) {
 
     // method to render dice 
 
-    this.getDiceHtml = function() {
+    this.setDiceHtml = function() {
         this.currentDiceScore = getDiceRollArray(this.diceCount);
         this.diceArray = this.currentDiceScore.map(num => `<div class="dice">${num}</div>`).join('');
     }
