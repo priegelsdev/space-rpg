@@ -1,14 +1,25 @@
 import {charData} from './data.js'
 import Character from './Character.js'
 
-const marine = new Character(charData[0]);
-const spaceWorm = new Character(charData[1]);
+const marine = new Character(charData.hero);
+const spaceWorm = new Character(charData.spaceworm);
+
+let monsterArray = ['spaceworm', 'mutant', 'alien']
 
 // event listener
 document.querySelector('.attack-btn').addEventListener('click', handleAttack);
 /* document.querySelector('.replay-btn').addEventListener('click', reset); */
 
+// function to get a new monster from array to fight against
+
+function getNewMonster() {
+  const newMonster = monsterArray.shift();
+  return newMonster;
+} 
+
+
 // function to  handle attack
+
 function handleAttack() {
 
     marine.getDiceHtml();
@@ -52,8 +63,8 @@ function reset() {
 //function to render out characters with constructor fn method
 
 function render() {
-    document.getElementById(marine.elementId).innerHTML = marine.getCharacterHtml();
-    document.getElementById(spaceWorm.elementId).innerHTML = spaceWorm.getCharacterHtml();
+    document.getElementById('hero').innerHTML = marine.getCharacterHtml();
+    document.getElementById('monster').innerHTML = spaceWorm.getCharacterHtml();
 }
 
 render();
