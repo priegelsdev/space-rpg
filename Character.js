@@ -1,9 +1,6 @@
-import {getDiceRollArray, getDicePlaceholderHtml} from './utils.js'
+import {getDiceRollArray, getDicePlaceholderHtml, getPercentage} from './utils.js'
 
 // constructor function as template to create multiple characters from
-
-const getPercentage = (remainingHealth, maximumHealth) => 
-    100 * remainingHealth / maximumHealth;
 
 function Character(data) {
     Object.assign(this, data);
@@ -59,8 +56,6 @@ function Character(data) {
         const {name, avatar, health, diceCount, diceArray} = this;
         const healthBar = getPercentage(this.health, this.maxHealth);
         const healthBarColor = this.getHealthBarCss();
-
-        console.log(healthBarColor)
 
         return `
             <div class="character-card">
