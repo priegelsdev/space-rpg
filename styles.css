@@ -60,6 +60,12 @@ main {
   display: block;
 }
 
+.healthbar {
+  height: 4px;
+  border-radius: 1px;
+  margin-top: 0.25em;
+}
+
 .dice-container {
   position: absolute;
   width: 100%;

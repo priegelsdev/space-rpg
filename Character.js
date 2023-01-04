@@ -16,6 +16,22 @@ function Character(data) {
     
     this.maxHealth = this.health  
 
+    // set up health bar
+
+    this.getHealthBarHtml = function() {
+      return getPercentage(this.health, this.maxHealth)
+    }
+
+    this.getHealthBarCss = function() {
+      let bgColor = 'green';
+
+      if (this.getHealthBarHtml() < 26) {
+        bgColor = 'red'
+      }
+
+      return bgColor;
+    }
+
     // method to render dice 
 
     this.getDiceHtml = function() {
@@ -33,8 +49,6 @@ function Character(data) {
             this.health = 0;
             this.isAlive = false;
         }
-
-        console.log(getPercentage(this.health, this.maxHealth))
     }
 
     // method to render character
@@ -43,12 +57,18 @@ function Character(data) {
 
         //object destructuring
         const {name, avatar, health, diceCount, diceArray} = this;
+        const healthBar = getPercentage(this.health, this.maxHealth);
+        const healthBarColor = this.getHealthBarCss();
+
+        console.log(healthBarColor)
 
         return `
             <div class="character-card">
                 <h4 class="name"> ${name} </h4>
                 <img class="avatar" src="${avatar}" />
                 <div class="health">health: <b> ${health} </b></div>
+                <div class="healthbar" style="width: ${healthBar}%; 
+                  background-color: ${healthBarColor}"></div>
                 <div class="dice-container">
                     ${diceArray}
                 </div>

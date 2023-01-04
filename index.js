@@ -6,7 +6,7 @@ const spaceWorm = new Character(charData[1]);
 
 // event listener
 document.querySelector('.attack-btn').addEventListener('click', handleAttack);
-document.querySelector('.replay-btn').addEventListener('click', reset);
+/* document.querySelector('.replay-btn').addEventListener('click', reset); */
 
 // function to  handle attack
 function handleAttack() {
@@ -44,10 +44,10 @@ function endGame() {
 }
 
 // function to reset game
-
+/* 
 function reset() {
-    
-}
+
+} */
 
 //function to render out characters with constructor fn method
 

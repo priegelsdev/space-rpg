@@ -11,7 +11,7 @@ const charData = [{
     elementId: "monster",
     name: "Space Worm",
     avatar: "img/worm.jpg",
-    health: 10,
+    health: 40,
     diceCount: 1,
     currentDiceScore: [0],
     isAlive: true
