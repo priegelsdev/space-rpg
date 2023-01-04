@@ -26,7 +26,7 @@ const charData = {
   alien: {
     name: "Big Al",
     avatar: "img/alien.jpg",
-    health: 20,
+    health: 25,
     diceCount: 3,
     currentDiceScore: [0],
     isAlive: true 
