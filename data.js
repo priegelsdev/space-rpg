@@ -10,7 +10,7 @@ const charData = {
   spaceworm: {
     name: "Space Worm",
     avatar: "img/worm.jpg",
-    health: 20,
+    health: 30,
     diceCount: 1,
     currentDiceScore: [0],
     isAlive: true
@@ -26,7 +26,7 @@ const charData = {
   alien: {
     name: "Big Al",
     avatar: "img/alien.jpg",
-    health: 30,
+    health: 20,
     diceCount: 3,
     currentDiceScore: [0],
     isAlive: true 
