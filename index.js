@@ -6,6 +6,7 @@ const spaceWorm = new Character(charData[1]);
 
 // event listener
 document.querySelector('.attack-btn').addEventListener('click', handleAttack);
+document.querySelector('.replay-btn').addEventListener('click', reset);
 
 // function to  handle attack
 function handleAttack() {
@@ -17,7 +18,6 @@ function handleAttack() {
     render();
 
     if (!marine.isAlive || !spaceWorm.isAlive) {
-        console.log('test')
         endGame();
     }
 }
@@ -28,12 +28,25 @@ function endGame() {
 
     // first use of ternary operator
 
-    const message = !marine.isAlive && !spaceWorm.isAlive ? 'You are dead. Game over!'
-        : !marine.isAlive ? 'You died.'
-        : 'You win.'
+    const message = !marine.isAlive && !spaceWorm.isAlive ? 'You died. No winner.'
+        : !marine.isAlive ? 'You died. The monsters win.'
+        : 'You win!'
 
-    console.log(message)
+    document.querySelector('.main').innerHTML = `
+        <div class="endscreen">
+          <h1>${message}</h1>
+        </div>
+      `
 
+    document.querySelector('.actions').innerHTML = `
+        <button class="replay-btn">Play again</button>
+      `
+}
+
+// function to reset game
+
+function reset() {
+    
 }
 
 //function to render out characters with constructor fn method

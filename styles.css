@@ -30,6 +30,10 @@ main {
 
 }
 
+.endscreen {
+  margin-top: 10em;
+}
+
 .character-card {
   background-color: black;
   width: 90vw;
@@ -90,7 +94,7 @@ main {
   text-align: center;
 }
 
-.attack-btn {
+.attack-btn, .replay-btn {
   background-color: #7bceff;
   color: black;
   padding: 0.75em 1.5em;
@@ -101,7 +105,7 @@ main {
   position: relative;
 }
 
-.attack-btn:active {
+.attack-btn:active, .replay-btn:active {
   transform: scale(0.9);
 }
 

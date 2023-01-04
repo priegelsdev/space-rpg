@@ -2,12 +2,19 @@ import {getDiceRollArray, getDicePlaceholderHtml} from './utils.js'
 
 // constructor function as template to create multiple characters from
 
+const getPercentage = (remainingHealth, maximumHealth) => 
+    100 * remainingHealth / maximumHealth;
+
 function Character(data) {
     Object.assign(this, data);
     
     // display placeholder dice on initial page load
 
     this.diceArray = getDicePlaceholderHtml(this.diceCount);
+
+    // setting up max health property for further use
+    
+    this.maxHealth = this.health  
 
     // method to render dice 
 
@@ -26,6 +33,8 @@ function Character(data) {
             this.health = 0;
             this.isAlive = false;
         }
+
+        console.log(getPercentage(this.health, this.maxHealth))
     }
 
     // method to render character
