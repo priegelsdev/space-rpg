@@ -8,10 +8,12 @@
 /*** BODY & MAIN ***/
 
 body {
-  margin-top: 1.5em;
+  height: 100vh;
   background-color: #020016;
-  /* TO DO: add stars to bg, mb animated to sparkle */ 
   color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 main {
@@ -61,7 +63,7 @@ main {
 }
 
 .healthbar {
-  height: 4px;
+  height: 3x;
   border-radius: 1px;
   margin-top: 0.25em;
 }
@@ -141,7 +143,7 @@ main {
   height: 100%;
 
 }
-
+/* 
 #stars {
   width: 1px;
   height: 1px;
@@ -260,4 +262,4 @@ main {
   to {
       transform: translateY(-2000px);
   }
-}
+} */
