@@ -33,7 +33,52 @@ function Character(data) {
 
     this.setDiceHtml = function() {
         this.currentDiceScore = getDiceRollArray(this.diceCount);
-        this.diceArray = this.currentDiceScore.map(num => `<div class="dice">${num}</div>`).join('');
+
+        this.diceArray = this.currentDiceScore.map(num => {
+          switch (num) {
+            case 1:
+              return `<div class="dice first-face">
+                <span class="dot"> </span>
+              </div>`
+            case 2:
+              return `<div class="dice second-face">
+                <span class="dot"> </span>
+                <span class="dot"> </span>
+              </div>`
+            case 3:
+              return `<div class="dice third-face">
+                <span class="dot"> </span>
+                <span class="dot"> </span>
+                <span class="dot"> </span>
+              </div>`
+            case 4:
+              return `<div class="dice fourth-face">
+                <span class="dot"> </span>
+                <span class="dot"> </span>
+                <span class="dot"> </span>
+                <span class="dot"> </span>
+              </div>`
+            case 5:
+              return `<div class="dice fifth-face">
+                <span class="dot"> </span>
+                <span class="dot"> </span>
+                <div class="row">
+                  <span class="dot"> </span>
+                </div>
+                <span class="dot"> </span>
+                <span class="dot"> </span>
+              </div>`
+            case 6:
+              return `<div class="dice sixth-face">
+                <span class="dot"> </span>
+                <span class="dot"> </span>
+                <span class="dot"> </span>
+                <span class="dot"> </span>
+                <span class="dot"> </span>
+                <span class="dot"> </span>
+              </div>`
+          }
+        }).join('')
     }
     
     // method when character takes damage

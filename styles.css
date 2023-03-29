@@ -32,10 +32,6 @@ main {
 
 }
 
-.endscreen {
-  margin-top: 10em;
-}
-
 .character-card {
   background-color: black;
   width: 90vw;
@@ -87,6 +83,7 @@ main {
   border-radius: 5px;
   width: 5.5vh;
   height: 5.5vh;
+  padding: 4px;
   text-align: center;
   line-height: 5vh;
   margin-right: 0.3em;
@@ -94,6 +91,76 @@ main {
 
 .placeholder-dice {
   background-color: transparent;
+}
+
+.dot {
+  display: block;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.first-face {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.second-face {
+  display: flex;
+  justify-content: space-between;
+}
+
+.second-face .dot:nth-of-type(2) {
+  align-self: flex-end;
+}
+
+.third-face {
+  display: flex;
+  justify-content: space-between;
+}
+
+.third-face .dot:nth-of-type(2) {
+  align-self: center;
+}
+
+.third-face .dot:nth-of-type(3) {
+  align-self: flex-end;
+}
+
+.fourth-face {
+  padding: 0;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.fifth-face {
+  padding: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.row {
+  width: 100%;
+}
+
+.row > * {
+  margin: 0 auto;
+}
+
+.sixth-face {
+  padding: 4px 0;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 /*** ACTIONS ***/
