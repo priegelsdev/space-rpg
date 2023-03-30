@@ -1,4 +1,5 @@
 import {charData} from './data.js'
+import {getItem} from './utils.js'
 import Character from './Character.js'
 
 let monsterArray = ['spaceworm', 'mutant', 'alien']
@@ -38,6 +39,9 @@ function handleAttack() {
         if (monsterArray.length > 0) {
           setTimeout(() => {
             monster = getNewMonster();
+              // when getting a new monster, hero gets item
+              marine.items.push(getItem())
+              console.log(marine)
             render();
           }, 1000)
         } else {
@@ -85,3 +89,11 @@ function render() {
 }
 
 render();
+
+/* 
+console.log(marine)
+marine.items.push(getItem())
+console.log(marine)
+console.log('marine uses gun on monster')
+console.log(monster)
+monster.health - marine.items[0].damage */

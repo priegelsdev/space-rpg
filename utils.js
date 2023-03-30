@@ -13,4 +13,11 @@ function getDicePlaceholderHtml(diceCount) {
 const getPercentage = (remainingHealth, maximumHealth) => 
     100 * remainingHealth / maximumHealth;
 
-export {getDiceRollArray, getDicePlaceholderHtml, getPercentage} 
+// get random item after first kill
+
+function getItem() {
+  const items = [{name: 'Plasma gun', damage: 10}, {name: 'Medkit', health: 10}]
+  return items[Math.floor(Math.random() * 2)]
+}
+
+export {getDiceRollArray, getDicePlaceholderHtml, getPercentage, getItem} 

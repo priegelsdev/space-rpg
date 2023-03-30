@@ -5,7 +5,8 @@ const charData = {
     health: 60,
     diceCount: 3,
     currentDiceScore: [0],
-    isAlive: true
+    isAlive: true,
+    items: []
   },
   spaceworm: {
     name: "Space Worm",
