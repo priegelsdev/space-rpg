@@ -111,7 +111,7 @@ function Character(data) {
                   background-color: ${healthBarColor}">
                 </div>
                 <div class="items-container">
-                  ${items.length > 0 ? items.map(item => `<img class="item-img" src="${item.img}"/>`).join('') : ''}
+                  ${items.map((item, index) => `<button class="item" id=${index}> <img class="item-img" src="${item.img}"/> </button>`).join('')}
                 </div>
                 <div class="dice-container">
                   ${diceArray}

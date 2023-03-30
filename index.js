@@ -15,13 +15,34 @@ document.querySelector('.attack-btn').addEventListener('click', function() {
   } 
 });
 
+// function to use item depending on what item it is
+function useItem(e) {
+  if (e.target.src.includes('gun')) { 
+    const itemArray = marine.items.filter(item => item.name === 'Plasma gun')
+    monster.takeDamage([itemArray[0].damage])
+
+    const found = marine.items.find(item => item.name === 'Plasma gun')
+    const index = marine.items.indexOf(found)
+
+    marine.items.splice(index, 1)
+  } else {
+    const itemArray = marine.items.filter(item => item.name === 'Medkit')
+    marine.takeDamage([-itemArray[0].health])
+
+    const found = marine.items.find(item => item.name === 'Medkit')
+    const index = marine.items.indexOf(found)
+
+    marine.items.splice(index, 1)
+  }
+  render();
+}
+
 // function to get a new monster from array to fight against
 
 function getNewMonster() {
   const newMonster = charData[monsterArray.shift()];
   return newMonster ? new Character(newMonster) : {}
 } 
-
 
 // function to  handle attack
 
@@ -41,7 +62,6 @@ function handleAttack() {
             monster = getNewMonster();
               // when getting a new monster, hero gets item
               marine.items.push(getItem())
-              console.log(marine)
             render();
           }, 1000)
         } else {
@@ -86,14 +106,19 @@ function reset() {
 function render() {
     document.getElementById('hero').innerHTML = marine.getCharacterHtml();
     document.getElementById('monster').innerHTML = monster.getCharacterHtml();
+
+    // add event listener to newly rendered items
+    if (marine.items.length > 0) {
+      document.getElementById('0').addEventListener('click', function(e) {
+        useItem(e)
+      })
+      if (marine.items.length > 1) {
+        document.getElementById('1').addEventListener('click', function(e) {
+          useItem(e)
+        })
+      }
+    }
 }
 
 render();
 
-/* 
-console.log(marine)
-marine.items.push(getItem())
-console.log(marine)
-console.log('marine uses gun on monster')
-console.log(monster)
-monster.health - marine.items[0].damage */
