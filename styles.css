@@ -36,7 +36,7 @@ main {
   background-color: black;
   width: 90vw;
   max-width: 230px;
-  height: 20rem;
+  height: 22rem;
   border: 1px solid #db80ff;
   border-radius: 3px;
   padding: 1em;
@@ -59,9 +59,20 @@ main {
 }
 
 .healthbar {
-  height: 3x;
+  height: 3px;
   border-radius: 1px;
   margin-top: 0.25em;
+}
+
+.items-container {
+  margin: 0.5em 0;
+}
+
+.item-img {
+  width: 20%;
+  height: 20%;
+  border-radius: 3px;
+  margin-right: 5px;
 }
 
 .dice-container {

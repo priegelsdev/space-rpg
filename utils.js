@@ -16,7 +16,7 @@ const getPercentage = (remainingHealth, maximumHealth) =>
 // get random item after first kill
 
 function getItem() {
-  const items = [{name: 'Plasma gun', damage: 10}, {name: 'Medkit', health: 10}]
+  const items = [{name: 'Plasma gun', damage: 10, img: "img/gun.jpeg"}, {name: 'Medkit', health: 10, img: "img/medkit.jpeg"}]
   return items[Math.floor(Math.random() * 2)]
 }
 

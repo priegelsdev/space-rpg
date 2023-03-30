@@ -14,7 +14,8 @@ const charData = {
     health: 30,
     diceCount: 1,
     currentDiceScore: [0],
-    isAlive: true
+    isAlive: true,
+    items: []
   },  
   mutant: {
     name: "El Mutante",
@@ -22,7 +23,8 @@ const charData = {
     health: 25,
     diceCount: 2,
     currentDiceScore: [0],
-    isAlive: true
+    isAlive: true,
+    items: []
   },
   alien: {
     name: "Big Al",
@@ -30,7 +32,8 @@ const charData = {
     health: 25,
     diceCount: 3,
     currentDiceScore: [0],
-    isAlive: true 
+    isAlive: true,
+    items: []
   }
 }
 

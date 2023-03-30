@@ -27,7 +27,7 @@ function Character(data) {
       }
 
       return bgColor;
-    }
+    } 
 
     // method to render dice 
 
@@ -98,7 +98,7 @@ function Character(data) {
     this.getCharacterHtml = function() {
 
         //object destructuring
-        const {name, avatar, health, diceCount, diceArray} = this;
+        const {name, avatar, health, items, diceArray} = this;
         const healthBar = getPercentage(this.health, this.maxHealth);
         const healthBarColor = this.getHealthBarCss();
 
@@ -108,9 +108,13 @@ function Character(data) {
                 <img class="avatar" src="${avatar}" />
                 <div class="health">health: <b> ${health} </b></div>
                 <div class="healthbar" style="width: ${healthBar}%; 
-                  background-color: ${healthBarColor}"></div>
+                  background-color: ${healthBarColor}">
+                </div>
+                <div class="items-container">
+                  ${items.length > 0 ? items.map(item => `<img class="item-img" src="${item.img}"/>`).join('') : ''}
+                </div>
                 <div class="dice-container">
-                    ${diceArray}
+                  ${diceArray}
                 </div>
             </div>
         `
